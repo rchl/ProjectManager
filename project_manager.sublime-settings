@@ -1,15 +1,19 @@
 {
-    // A list of folders containing *.sublime-project files, e.g.,
-    // "projects_path": ["path/to/custom/Projects", "another_path/to/Projects"]
-    // please note that they shall be the folders containing solely *.sublime-project or
-    // *.sublimn-workspace files. It is not intended to be used for automatic project
-    // discovery.
-    "projects_path": [],
+    // The path to the Projects folder, could be either a string or a directory with keys
+    // associated with computer names.
+    // "projects": {
+    //     "computer1": "path/to/computer1/projects",
+    //     "computer2": "path/to/computer1/projects"
+    // }
+    // For backward compatibility, it should be also a list of directories.
+    // The variable `$default` will be expaneded to to default `Projects` folder under  `Users`,
+    // and `$hostname` will be expanded to the computer name.
+    // Please note that they shall be the folders containing solely *.sublime-project or
+    // *.sublimn-workspace files. It is not intended to be used for automatic project discovery.
+    "projects": "$default",
 
-    // Enable local projects directory, such a directory will be named as
-    // "Projects - computer_name", where computer_name is your computer hostname.
-    // It would be useful if Sublime Text settings are synced across different computers.
-    "use_local_projects_dir": false,
+    // If there are more than one directory, prompt which directory to save the project files.
+    "prompt_project_location": true,
 
     // Windows/Linux only
     // close project when the window is closed
